@@ -17,6 +17,18 @@
     specific language governing permissions and limitations
     under the License.
 -->
+
+<!--
+   para la construcion del proyecto.
+
+  Cordova 3.4.x
+  API 22 instalar en SDK
+  jquery 2.2.3
+  jquery mobile 1.4.4
+
+  para GITHUB crear primero repositorio en web.
+
+-->
 <html>
     <head>
         <meta charset="utf-8" />
@@ -26,29 +38,54 @@
         <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css"/>
         <script src="js/jquery-2.2.3.min.js"></script>
         <script  src="js/jquery.mobile-1.4.5.min.js"></script>
-        
+
         <link rel="stylesheet" type="text/css" href="css/index.css" />
-              
+
         <title>Reloj Display Azul</title>
     </head>
+
     <body>
         <div data-role="page" id="main">
 
             <div data-role="header" class="ui-header-fixed ui-corner-all ui-shadow">
-               
+
                 <h1 >Reloj Azul</h1>
             </div><!-- /header -->
 
             <div role ="main" class="ui-content">
-                
-                
-            </div> <!-- Contendo -->
-            
+
+                <div id="conexion"> 
+                    <p>Conexion</p>
+                       
+                      
+                      <div id="deviceList" >
+      
+                      </div>
+                      
+                      <div id="divConectar">
+                          <button id="refreshButton" class="ui-btn" >Busca Nodos</button>
+                      </div>
+                    
+                      <div id="divDesc">
+                          <button id="descButton" class="ui-btn ui-corner-all">Desconecta Nodos</button>
+                      </div> 
+                </div>  
+
+                <div id="trabajo">
+
+                    <p>Puesta Hora </p>
+                    <div id="idHora">10:00</div>
+                    
+                    <button id="setHora">Set</button>
+                </div>  
+
+            </div> <!-- Contenido -->
+
             <div data-role="footer" class="ui-footer-fixed ui-corner-all ui-shadow">
-                
-               
-                 <!--<a href="#popupAbout" id="btnAbout" data-role="button" data-rel="popup" data-icon="info" data-iconpos="notext" class="ui-btn-left" >Delete</a> -->
-                 <h1>Javier Espinosa Guerra</h1>
+
+
+                <!--<a href="#popupAbout" id="btnAbout" data-role="button" data-rel="popup" data-icon="info" data-iconpos="notext" class="ui-btn-left" >Delete</a> -->
+                <h1>Javier Espinosa Guerra</h1>
             </div><!-- /footer -->
         </div>  <!-- Pagina Principal -->
         <script type="text/javascript" src="cordova.js"></script>

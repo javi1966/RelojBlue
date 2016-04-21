@@ -16,14 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-* {
-    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
-}
+
 
 .ui-body-e {
     background-color:#fbef7e !important;
 }
-
 .ui-header-fixed {
 
     color:yellow !important;
@@ -43,6 +40,57 @@
     left : 0 !important; 
     color: black !important;
     display: inline !important; 
+}
+
+#conexion {
+   
+    background-image: url("../img/fondo_negro.jpg") !important; 
+    
+}
+
+#trabajo {
+    padding: 0 !important;
+    margin: 0 !important;
+    float:bottom;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: black;
+    
+    /*background-image: url("../img/fondo_azul.jpg") !important; */
+}
+#idHora{
+    
+    color:goldenrod;
+    text-align: center;
+    font-family:fantasy;
+    font-size: 5.5em;
+}
+#trabajo button{
+     position:bottom;
+}
+
+
+
+button {
+    box-shadow: 10px 10px 5px 0px rgba(102,102,102,0.65);
+    border-radius: 1.0em !important;
+    color : yellow !important;
+    background:linear-gradient( #5f9cc5,#396b9e )  !important;
+    background:-webkit-linear-gradient( #5f9cc5,#396b9e )  !important;
+    text-align: center !important;
+}
+
+ p {
+
+    margin: 0 ;
+    border-bottom: #ffff00 ;
+    color:burlywood;
+    font-family: cursive;
+    font-weight:bold;
+    letter-spacing: 3px; 
+    text-align: left;
+    font-size: 1.2em;
+    border-bottom-width: medium;
 }
 
 

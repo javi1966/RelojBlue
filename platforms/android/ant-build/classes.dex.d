@@ -6,6 +6,13 @@ D:\DESARROLLOS\SK_RELOJ_BLU\RelojBlue\platforms\android\ant-build\classes\com\co
 D:\DESARROLLOS\SK_RELOJ_BLU\RelojBlue\platforms\android\ant-build\classes\com\coolappz\RelojBlue\R$xml.class \
 D:\DESARROLLOS\SK_RELOJ_BLU\RelojBlue\platforms\android\ant-build\classes\com\coolappz\RelojBlue\R.class \
 D:\DESARROLLOS\SK_RELOJ_BLU\RelojBlue\platforms\android\ant-build\classes\com\coolappz\RelojBlue\RelojBlue.class \
+D:\DESARROLLOS\SK_RELOJ_BLU\RelojBlue\platforms\android\ant-build\classes\com\megster\cordova\BluetoothSerial$1.class \
+D:\DESARROLLOS\SK_RELOJ_BLU\RelojBlue\platforms\android\ant-build\classes\com\megster\cordova\BluetoothSerial$2.class \
+D:\DESARROLLOS\SK_RELOJ_BLU\RelojBlue\platforms\android\ant-build\classes\com\megster\cordova\BluetoothSerial.class \
+D:\DESARROLLOS\SK_RELOJ_BLU\RelojBlue\platforms\android\ant-build\classes\com\megster\cordova\BluetoothSerialService$AcceptThread.class \
+D:\DESARROLLOS\SK_RELOJ_BLU\RelojBlue\platforms\android\ant-build\classes\com\megster\cordova\BluetoothSerialService$ConnectedThread.class \
+D:\DESARROLLOS\SK_RELOJ_BLU\RelojBlue\platforms\android\ant-build\classes\com\megster\cordova\BluetoothSerialService$ConnectThread.class \
+D:\DESARROLLOS\SK_RELOJ_BLU\RelojBlue\platforms\android\ant-build\classes\com\megster\cordova\BluetoothSerialService.class \
 D:\DESARROLLOS\SK_RELOJ_BLU\RelojBlue\platforms\android\ant-build\classes\org\apache\cordova\device\Device.class \
 D:\DESARROLLOS\SK_RELOJ_BLU\RelojBlue\platforms\android\ant-build\classes\org\apache\cordova\dialogs\Notification$1.class \
 D:\DESARROLLOS\SK_RELOJ_BLU\RelojBlue\platforms\android\ant-build\classes\org\apache\cordova\dialogs\Notification$2$1.class \

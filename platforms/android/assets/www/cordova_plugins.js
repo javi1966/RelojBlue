@@ -43,6 +43,13 @@ module.exports = [
         "clobbers": [
             "device"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-bluetooth-serial/www/bluetoothSerial.js",
+        "id": "cordova-plugin-bluetooth-serial.bluetoothSerial",
+        "clobbers": [
+            "window.bluetoothSerial"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -52,7 +59,8 @@ module.exports.metadata =
     "cordova-plugin-network-information": "1.2.2-dev",
     "cordova-plugin-vibration": "2.1.2-dev",
     "cordova-plugin-console": "1.0.4-dev",
-    "cordova-plugin-device": "1.1.3-dev"
+    "cordova-plugin-device": "1.1.3-dev",
+    "cordova-plugin-bluetooth-serial": "0.4.5"
 }
 // BOTTOM OF METADATA
 });

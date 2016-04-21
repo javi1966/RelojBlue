@@ -24,6 +24,12 @@
                             "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
                             "count": 1
                         }
+                    ],
+                    "/widget": [
+                        {
+                            "xml": "<feature name=\"BluetoothSerial\"><param name=\"android-package\" value=\"com.megster.cordova.BluetoothSerial\" /></feature>",
+                            "count": 1
+                        }
                     ]
                 }
             },
@@ -38,6 +44,14 @@
                     "/manifest": [
                         {
                             "xml": "<uses-permission android:name=\"android.permission.VIBRATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.BLUETOOTH\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.BLUETOOTH_ADMIN\" />",
                             "count": 1
                         }
                     ]
@@ -59,6 +73,9 @@
             "PACKAGE_NAME": "com.coolappz.RelojBlue"
         },
         "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.coolappz.RelojBlue"
+        },
+        "cordova-plugin-bluetooth-serial": {
             "PACKAGE_NAME": "com.coolappz.RelojBlue"
         }
     },

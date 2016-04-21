@@ -46,9 +46,13 @@ var toast = function (msg) {
 
 
 var app = {
+    deviceName: "",
+    hora:"",
+    minu:"",
     // Application Constructor
     initialize: function () {
         this.bindEvents();
+        setInterval('app.reloj()',1000);
         console.log("initialize: ");
     },
     // Bind Event Listeners
@@ -57,6 +61,11 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function () {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        $(document).on('pageshow', '#main', this.onPageShow);
+        refreshButton.ontouchstart = app.list;
+        descButton.ontouchstart = app.disconnect;
+        deviceList.ontouchstart = app.connect;
+        setHora.ontouchstart=app.ponHora; 
         console.log("bindEvents:");
     },
     // deviceready Event Handler
@@ -65,12 +74,143 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function () {
         app.receivedEvent('deviceready');
+        
+ 
         console.log("onDeviceReady");
     },
     // Update DOM on a Received Event
     receivedEvent: function (id) {
-        toast("Iniciando a..." + this.deviceName);
 
+
+        toast("Iniciando...");
+        
         console.log('Received Event: ' + id);
+    },
+    onPageShow: function () {
+
+        $("#divDesc").hide();
+       
+        
+    },
+    //***********parte bluetooth **********************
+    list: function (event) {
+        bluetoothSerial.list(app.ondevicelist, app.generateFailureFunction("List Failed"));
+        console.log("debug:list");
+    },
+    ondevicelist: function (devices) {
+        var deviceId;
+        var innerHTML = "";
+
+        // remove existing devices
+        $("#deviceList").show();
+        $('#deviceList').html("");
+
+
+        devices.forEach(function (device) {
+
+            if (device.hasOwnProperty("uuid")) { // TODO https://github.com/don/BluetoothSerial/issues/5
+                deviceId = device.uuid;
+            } else if (device.hasOwnProperty("address")) {
+                deviceId = device.address;
+            } else if (device.hasOwnProperty("name")) {
+                deviceId = device.name;
+            } else {
+                deviceId = "ERROR " + JSON.stringify(device);
+            }
+            //<button id="descButton" data-theme='b'>Desconecta Nodos</button>
+            innerHTML += "<button  deviceId=" + deviceId + " data-theme=b>" + device.name + "</button><br/>";
+
+            console.log("debug:dispositivos: " + device.uuid + "," + device.address);
+            console.log(innerHTML);
+
+        });
+
+
+        $('#deviceList').html(innerHTML);
+
+        if (devices.length === 0) {
+
+            if (cordova.platformId === "ios") { // BLE
+                toast("No Bluetooth Peripherals Discovered.");
+
+            } else { // Android
+                toast("Empareja Dispositivo Bluetooth.");
+
+            }
+
+        } else {
+            //app.setStatus("Found " + devices.length + " device" + (devices.length === 1 ? "." : "s."));
+            toast("Encontrado " + devices.length + " dispositivo" + (devices.length === 1 ? "." : "s."));
+        }
+
+        console.log("debug:ondevicelist");
+    },
+    generateFailureFunction: function (message) {
+        var func = function (reason) {
+            var details = "";
+            if (reason) {
+                details += ": " + JSON.stringify(reason);
+            }
+
+            toast(message + details);
+        };
+        console.log("debug:generateFailureFunction");
+        return func;
+    },
+    disconnect: function (event) {
+        if (event) {
+            event.preventDefault();
+        }
+        
+        //app.setStatus("Desconectando...");
+        bluetoothSerial.disconnect(app.ondisconnect);
+
+    },
+    ondisconnect: function () {
+        $("#divDesc").hide('slow');
+        $("#divConectar").show('slow');
+        $("#deviceList").hide('slow');
+        toast("Desconectado...");
+        console.log("Desconectando");
+        
+    },
+    connect: function (e) {
+
+        this.deviceName = e.target.getAttribute('deviceId');
+
+        toast("Conectando a..." + this.deviceName);
+        console.log("Conectando a..." + this.deviceName);
+        bluetoothSerial.connect(this.deviceName, app.onconnect, app.ondisconnect);
+    },
+    onconnect: function () {
+
+        $("#divDesc").show('slow');
+        $("#divConectar").hide('slow');
+        $("#deviceList").hide('slow');
+
+        //  toast("Conectado a..." + this.deviceName);
+        //  app.setStatus("Conectado a..." + this.deviceName);
+        console.log("Conectado a...");//+ this.deviceName);
+    },
+    reloj:function () {
+        var hora= new Date();
+        app.hora=hora.getHours();
+        app.minu=hora.getMinutes();
+        app.minu = app.minu > 9 ? app.minu : '0' + app.minu;
+        var strHora = hora.getHours()+'.'+app.minu;
+       // console.log("reloj: "+strHora);
+         $("#idHora").html(strHora);
+      
     }
-};
+    ,
+    ponHora:function () {
+        
+        if(this.deviceName === null)
+            toast("No seleccionado ningun reloj");
+        console.log("SetHor");
+    }
+
+
+
+
+};//fin app
