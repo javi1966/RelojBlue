@@ -16,12 +16,15 @@ D:\DESARROLLOS\SK_RELOJ_BLU\RelojBlue\platforms\android\assets\_where-is-www.txt
 D:\DESARROLLOS\SK_RELOJ_BLU\RelojBlue\platforms\android\assets\www\cordova.js \
 D:\DESARROLLOS\SK_RELOJ_BLU\RelojBlue\platforms\android\assets\www\cordova_plugins.js \
 D:\DESARROLLOS\SK_RELOJ_BLU\RelojBlue\platforms\android\assets\www\css \
+D:\DESARROLLOS\SK_RELOJ_BLU\RelojBlue\platforms\android\assets\www\fonts \
 D:\DESARROLLOS\SK_RELOJ_BLU\RelojBlue\platforms\android\assets\www\img \
 D:\DESARROLLOS\SK_RELOJ_BLU\RelojBlue\platforms\android\assets\www\index.html \
 D:\DESARROLLOS\SK_RELOJ_BLU\RelojBlue\platforms\android\assets\www\js \
 D:\DESARROLLOS\SK_RELOJ_BLU\RelojBlue\platforms\android\assets\www\plugins \
 D:\DESARROLLOS\SK_RELOJ_BLU\RelojBlue\platforms\android\assets\www\css\index.css \
 D:\DESARROLLOS\SK_RELOJ_BLU\RelojBlue\platforms\android\assets\www\css\jquery.mobile-1.4.5.min.css \
+D:\DESARROLLOS\SK_RELOJ_BLU\RelojBlue\platforms\android\assets\www\fonts\DSEG7Classic-BoldItalic.ttf \
+D:\DESARROLLOS\SK_RELOJ_BLU\RelojBlue\platforms\android\assets\www\fonts\DSEG7Classic-BoldItalic.woff \
 D:\DESARROLLOS\SK_RELOJ_BLU\RelojBlue\platforms\android\assets\www\img\fondo_azul.jpg \
 D:\DESARROLLOS\SK_RELOJ_BLU\RelojBlue\platforms\android\assets\www\img\fondo_negro.jpg \
 D:\DESARROLLOS\SK_RELOJ_BLU\RelojBlue\platforms\android\assets\www\img\logo.png \

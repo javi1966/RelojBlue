@@ -66,6 +66,7 @@ var app = {
         descButton.ontouchstart = app.disconnect;
         deviceList.ontouchstart = app.connect;
         setHora.ontouchstart=app.ponHora; 
+        cerrar.onclick=app.cerrar;
         console.log("bindEvents:");
     },
     // deviceready Event Handler
@@ -74,23 +75,17 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function () {
         app.receivedEvent('deviceready');
-        
- 
         console.log("onDeviceReady");
     },
     // Update DOM on a Received Event
     receivedEvent: function (id) {
-
-
         toast("Iniciando...");
-        
         console.log('Received Event: ' + id);
     },
     onPageShow: function () {
 
         $("#divDesc").hide();
-       
-        
+               
     },
     //***********parte bluetooth **********************
     list: function (event) {
@@ -118,6 +113,7 @@ var app = {
                 deviceId = "ERROR " + JSON.stringify(device);
             }
             //<button id="descButton" data-theme='b'>Desconecta Nodos</button>
+            
             innerHTML += "<button  deviceId=" + deviceId + " data-theme=b>" + device.name + "</button><br/>";
 
             console.log("debug:dispositivos: " + device.uuid + "," + device.address);
@@ -189,7 +185,7 @@ var app = {
         $("#deviceList").hide('slow');
 
         //  toast("Conectado a..." + this.deviceName);
-        //  app.setStatus("Conectado a..." + this.deviceName);
+        
         console.log("Conectado a...");//+ this.deviceName);
     },
     reloj:function () {
@@ -205,11 +201,15 @@ var app = {
     ,
     ponHora:function () {
         
-        if(this.deviceName === null)
+        if(app.deviceName === "")
             toast("No seleccionado ningun reloj");
-        console.log("SetHor");
+        console.log("SetHor: "+app.deviceName);
     }
-
+    ,
+    cerrar:function () {
+        console.log("Cerrar");
+        navigator.app.exitApp();
+    }
 
 
 

@@ -17,6 +17,11 @@
  * under the License.
  */
 
+@font-face {
+    font-family: font7segmentos;
+    src: url('../fonts/DSEG7Classic-BoldItalic.woff');
+}
+
 
 .ui-body-e {
     background-color:#fbef7e !important;
@@ -25,8 +30,16 @@
 
     color:yellow !important;
     font-family: cursive !important;
+    font-size: 1.2em;
     letter-spacing: 3px !important; 
     background-color: #5f9cc5 !important;
+}
+.ui-header-fixed a{
+  background-color: #5f9cc5 !important;  
+  border:0;
+  padding-right: 8px;
+  padding-top: 16px;
+  
 }
 
 .ui-content {
@@ -40,33 +53,18 @@
     left : 0 !important; 
     color: black !important;
     display: inline !important; 
-}
-
-#conexion {
-   
     background-image: url("../img/fondo_negro.jpg") !important; 
-    
 }
 
-#trabajo {
-    padding: 0 !important;
-    margin: 0 !important;
-    float:bottom;
-    width: 100% !important;
-    height: 100% !important;
-    background-color: black;
-    
-    /*background-image: url("../img/fondo_azul.jpg") !important; */
-}
+
+
 #idHora{
     
-    color:goldenrod;
+    color:darkturquoise;
     text-align: center;
-    font-family:fantasy;
+    font-family:font7segmentos;
     font-size: 5.5em;
-}
-#trabajo button{
-     position:bottom;
+    
 }
 
 
@@ -78,18 +76,19 @@ button {
     background:linear-gradient( #5f9cc5,#396b9e )  !important;
     background:-webkit-linear-gradient( #5f9cc5,#396b9e )  !important;
     text-align: center !important;
+    margin: .5em .5em .5em .5em;
 }
 
  p {
 
     margin: 0 ;
-    border-bottom: #ffff00 ;
+    border-bottom: 3px dotted white;
     color:burlywood;
     font-family: cursive;
     font-weight:bold;
     letter-spacing: 3px; 
     text-align: left;
-    font-size: 1.2em;
+    font-size: 1.5em;
     border-bottom-width: medium;
 }
 

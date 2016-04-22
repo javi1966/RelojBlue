@@ -27,6 +27,9 @@
   jquery mobile 1.4.4
 
   para GITHUB crear primero repositorio en web.
+  los plugins se introducen en carpeta plugins y 
+  se modifica plugings.properties en carpeta 
+  /nbprojects.
 
 -->
 <html>
@@ -48,13 +51,14 @@
         <div data-role="page" id="main">
 
             <div data-role="header" class="ui-header-fixed ui-corner-all ui-shadow">
-
+                <a href="" id="cerrar" data-icon="delete"  class="ui-btn ui-btn-left ui-btn-icon-left ui-icon-power"></a> 
                 <h1 >Reloj Azul</h1>
             </div><!-- /header -->
 
             <div role ="main" class="ui-content">
 
-                <div id="conexion"> 
+                <!--<div id="conexion"> -->
+                    <br/>
                     <p>Conexion</p>
                        
                       
@@ -69,15 +73,15 @@
                       <div id="divDesc">
                           <button id="descButton" class="ui-btn ui-corner-all">Desconecta Nodos</button>
                       </div> 
-                </div>  
+                <!--</div>  -->
 
-                <div id="trabajo">
+                <!--<div id="trabajo">-->
 
                     <p>Puesta Hora </p>
                     <div id="idHora">10:00</div>
                     
                     <button id="setHora">Set</button>
-                </div>  
+                <!--</div>  -->
 
             </div> <!-- Contenido -->
 
