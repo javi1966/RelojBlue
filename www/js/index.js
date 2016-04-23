@@ -47,12 +47,12 @@ var toast = function (msg) {
 
 var app = {
     deviceName: "",
-    hora:"",
-    minu:"",
+    hora: "",
+    minu: "",
     // Application Constructor
     initialize: function () {
         this.bindEvents();
-        setInterval('app.reloj()',1000);
+        setInterval('app.reloj()', 1000);
         console.log("initialize: ");
     },
     // Bind Event Listeners
@@ -65,8 +65,8 @@ var app = {
         refreshButton.ontouchstart = app.list;
         descButton.ontouchstart = app.disconnect;
         deviceList.ontouchstart = app.connect;
-        setHora.ontouchstart=app.ponHora; 
-        cerrar.onclick=app.cerrar;
+        setHora.ontouchstart = app.ponHora;
+        cerrar.onclick = app.cerrar;
         console.log("bindEvents:");
     },
     // deviceready Event Handler
@@ -85,7 +85,7 @@ var app = {
     onPageShow: function () {
 
         $("#divDesc").hide();
-               
+        $("#conectado").hide();  
     },
     //***********parte bluetooth **********************
     list: function (event) {
@@ -113,7 +113,7 @@ var app = {
                 deviceId = "ERROR " + JSON.stringify(device);
             }
             //<button id="descButton" data-theme='b'>Desconecta Nodos</button>
-            
+
             innerHTML += "<button  deviceId=" + deviceId + " data-theme=b>" + device.name + "</button><br/>";
 
             console.log("debug:dispositivos: " + device.uuid + "," + device.address);
@@ -157,7 +157,7 @@ var app = {
         if (event) {
             event.preventDefault();
         }
-        
+
         //app.setStatus("Desconectando...");
         bluetoothSerial.disconnect(app.ondisconnect);
 
@@ -167,16 +167,18 @@ var app = {
         $("#divConectar").show('slow');
         $("#deviceList").hide('slow');
         toast("Desconectado...");
+        app.deviceName="";
+        $("#conectado").hide();  
         console.log("Desconectando");
-        
+
     },
     connect: function (e) {
 
-        this.deviceName = e.target.getAttribute('deviceId');
+        app.deviceName = e.target.getAttribute('deviceId');
 
-        toast("Conectando a..." + this.deviceName);
-        console.log("Conectando a..." + this.deviceName);
-        bluetoothSerial.connect(this.deviceName, app.onconnect, app.ondisconnect);
+        toast("Conectando a..." + app.deviceName);
+        console.log("Conectando a..." + app.deviceName);
+        bluetoothSerial.connect(app.deviceName, app.onconnect, app.ondisconnect);
     },
     onconnect: function () {
 
@@ -184,36 +186,40 @@ var app = {
         $("#divConectar").hide('slow');
         $("#deviceList").hide('slow');
 
-        //  toast("Conectado a..." + this.deviceName);
+        toast("Conectado a..." + app.deviceName);
         
-        console.log("Conectado a...");//+ this.deviceName);
+        $("#conectado").show().html("Conectado a "+app.deviceName)  
+                .css("color:green;");
+        console.log("Conectado a..."+app.deviceName);//+ this.deviceName);
     },
     enviaHora: function () {
 
-        bluetoothSerial.write(hora+minu);
-        console.log("Envia dato hora");
+        bluetoothSerial.write(app.hora +":"+ app.minu);
+        console.log("Envia dato hora: "+app.hora+":"+app.minu);
 
     },
-    reloj:function () {
-        var hora= new Date();
-        app.hora=hora.getHours();
-        app.minu=hora.getMinutes();
+    reloj: function () {
+        var hora = new Date();
+        app.hora = hora.getHours();
+        app.minu = hora.getMinutes();
         app.minu = app.minu > 9 ? app.minu : '0' + app.minu;
-        var strHora = hora.getHours()+'.'+app.minu;
-       // console.log("reloj: "+strHora);
-         $("#idHora").html(strHora);
-      
+        var strHora = hora.getHours() + '.' + app.minu;
+        // console.log("reloj: "+strHora);
+        $("#idHora").html(strHora);
+
     }
     ,
-    ponHora:function () {
-        
-        if(app.deviceName === "")
+    ponHora: function () {
+
+        if (app.deviceName === "")
             toast("No seleccionado ningun reloj");
-        app.enviaHora();
-        console.log("SetHor: "+app.deviceName);
+        else {
+            app.enviaHora();
+            console.log("SetHor: " + app.deviceName);
+        }
     }
     ,
-    cerrar:function () {
+    cerrar: function () {
         console.log("Cerrar");
         navigator.app.exitApp();
     }

@@ -41,6 +41,10 @@
   padding-top: 16px;
   
 }
+.ui-icon-power{
+    
+    color:red !important;
+}
 
 .ui-content {
 
