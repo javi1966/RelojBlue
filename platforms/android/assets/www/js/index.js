@@ -32,17 +32,14 @@ var toast = function (msg) {
                 "box-shadow": "10px 10px 5px 0px rgba(102,102,102,0.65)",
             })
 
-            .appendTo("body").delay(4000)
+            .appendTo("body").delay(3000)
             .fadeOut(400, function () {
                 $(this).remove();
             });
 };
 
 
-//***************************************
-
-
-
+//********************************************************
 
 
 var app = {
@@ -66,7 +63,9 @@ var app = {
         descButton.ontouchstart = app.disconnect;
         deviceList.ontouchstart = app.connect;
         setHora.ontouchstart = app.ponHora;
-        cerrar.onclick = app.cerrar;
+        setAlarma.onclick = app.ponAlarma;
+        cerrar.ontouchstart = app.cerrar;
+        btnAbout.onclick = app.about;
         console.log("bindEvents:");
     },
     // deviceready Event Handler
@@ -222,6 +221,17 @@ var app = {
     cerrar: function () {
         console.log("Cerrar");
         navigator.app.exitApp();
+    }
+    ,
+    ponAlarma: function () {
+        
+       $("#popupAlarma").popup("open");
+       console.log("ponAlarma");
+    }
+    ,
+    about: function() {
+       $("#popupAbout").show(); 
+        console.log("about");
     }
 
 

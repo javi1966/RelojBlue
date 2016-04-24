@@ -39,7 +39,7 @@
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css"/>
-        <script src="js/jquery-2.2.3.min.js"></script>
+        <script  src="js/jquery-2.1.4.min.js"></script>
         <script  src="js/jquery.mobile-1.4.5.min.js"></script>
 
         <link rel="stylesheet" type="text/css" href="css/index.css" />
@@ -51,48 +51,87 @@
         <div data-role="page" id="main">
 
             <div data-role="header" class="ui-header-fixed ui-corner-all ui-shadow">
-                <a href="" id="cerrar" data-icon="delete"  class="ui-btn ui-btn-left ui-btn-icon-left ui-icon-power"></a> 
+                <a href="#" id="cerrar"  class="ui-btn ui-btn-left ui-btn-icon-left ui-icon-power"></a> 
                 <h1 >Reloj Azul</h1>
             </div><!-- /header -->
 
             <div role ="main" class="ui-content">
 
                 <!--<div id="conexion"> -->
-                    <br/>
-                    <p>Conexion</p>
-                       
-                      
-                      <div id="deviceList" >
-      
-                      </div>
-                      
-                      <div id="divConectar">
-                          <button id="refreshButton" class="ui-btn" >Busca Nodos</button>
-                      </div>
-                    
-                      <div id="divDesc">
-                          <button id="descButton" class="ui-btn ui-corner-all">Desconecta Nodos</button>
-                      </div> 
+                <br/>
+                <p>Conexion</p>
+
+
+                <div id="deviceList" >
+
+                </div>
+
+                <div id="divConectar">
+                    <button id="refreshButton" class="ui-btn" >Busca Nodos</button>
+                </div>
+
+                <div id="divDesc">
+                    <button id="descButton" class="ui-btn ui-corner-all">Desconecta Nodos</button>
+                </div> 
                 <!--</div>  -->
 
                 <!--<div id="trabajo">-->
 
-                    <p>Puesta Hora </p>
-                    <div id="idHora">10:00</div>
-                    
-                    <button id="setHora" class="ui-btn ui-corner-all">Set</button>
-                    <p id="conectado">Conectado a ...</p>
+                <p>Control Hora</p>
+                <div id="idHora">88:88</div>
+
+                <button id="setHora" class="ui-btn ui-corner-all">Set</button>
+                <button id="setAlarma"  data-rel="popup"  class="ui-btn ui-corner-all" >Set Alarma</button> 
+                <p id="conectado">Conectado a ...</p>
                 <!--</div>  -->
+
+                <div data-role="popup" id="popupAlarma"   
+                     data-transition="turn" class="ui-corner-all ">
+
+                    <div data-role="header"  style="margin-left:1%;margin-right:1%;margin-top:1%;"  class="ui-corner-all">
+                        <h1 style="text-align:center;color:blue;font-size: 20px;opacity:0.83;"
+                            >Set Alarma</h1>
+                    </div>
+                    
+                    <div  data-role="content" style="padding:10px 20px;">
+                    <input id="set_alarma" type="time" style="font-family:font7segmentos;color:darkturquoise;
+                           ;padding-left:10%;padding-right:10%;">
+                    <a href="" id="popOK" style="margin:10% 20% 10% 20%;" data-role="button">OK</a>
+                    <a href="" style="margin:5% 15% 5% 15%;" data-role="button" data-rel="back">Cancelar</a>
+                    </div>
+                    
+                </div>
+
+
+                <div data-role="popup" id="popupAbout"  data-overlay-theme="a" data-transition="flip"  class="ui-corner-all">
+                    <div data-role="header"  style="margin-left:1%;margin-right:1%;margin-top:1%;"  class="ui-corner-all">
+                        <h1 style="text-align:center;color:blueviolet;"
+                            >About</h1>
+                    </div>
+                    <p style="text-align:center;">Reloj Blue</p>
+
+                    <a href="#" style="background:rgba(152,255,0,0.6);" data-role="button" data-rel="back" >Cerrar</a>
+
+                </div>
+
+                <!-- popups -->
 
             </div> <!-- Contenido -->
 
+
             <div data-role="footer" class="ui-footer-fixed ui-corner-all ui-shadow">
-
-
-                <!--<a href="#popupAbout" id="btnAbout" data-role="button" data-rel="popup" data-icon="info" data-iconpos="notext" class="ui-btn-left" >Delete</a> -->
+                <a href="#popupAbout" id="btnAbout"   data-rel="popup"   class="ui-btn ui-btn-left ui-btn-icon-left ui-icon-info"></a> 
                 <h1>Javier Espinosa Guerra</h1>
-            </div><!-- /footer -->
+            </div><!-- footer -->
+
+
+
         </div>  <!-- Pagina Principal -->
+
+
+        <div id="warning-message" style="color:red;" >
+            <h2 >Esta APP solo se ve en PORTRAIT</h2>
+        </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">

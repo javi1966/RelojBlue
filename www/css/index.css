@@ -38,7 +38,7 @@
   background-color: #5f9cc5 !important;  
   border:0;
   padding-right: 8px;
-  padding-top: 16px;
+  padding-top: 35px;
   
 }
 
@@ -99,7 +99,25 @@ button {
     background-color: #5f9cc5 !important;
     color: white !important;
     letter-spacing: 3px !important; 
+    text-shadow:2px 2px 0 #828282 !important;
 }
+
+.ui-footer-fixed a{
+  background-color: #5f9cc5 !important;  
+  border:0;
+  padding-right: 8px;
+  padding-top: 16px;
+  
+}
+
+#warning-message { display: none; }
+    @media only screen and (orientation:landscape){
+        #main { display:none; }
+        #warning-message { display:block; }
+    }
+    @media only screen and (orientation:portrait){
+        #warning-message { display:none; }
+    }
 
 
 /* Landscape layout (with min-width) */

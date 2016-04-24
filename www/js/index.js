@@ -32,23 +32,22 @@ var toast = function (msg) {
                 "box-shadow": "10px 10px 5px 0px rgba(102,102,102,0.65)",
             })
 
-            .appendTo("body").delay(4000)
+            .appendTo("body").delay(3000)
             .fadeOut(400, function () {
                 $(this).remove();
             });
 };
 
 
-//***************************************
-
-
-
+//********************************************************
 
 
 var app = {
     deviceName: "",
     hora: "",
     minu: "",
+    hora_alarma: "",
+    minuto_alarma:"",
     // Application Constructor
     initialize: function () {
         this.bindEvents();
@@ -66,7 +65,10 @@ var app = {
         descButton.ontouchstart = app.disconnect;
         deviceList.ontouchstart = app.connect;
         setHora.ontouchstart = app.ponHora;
-        cerrar.onclick = app.cerrar;
+        setAlarma.onclick=app.abrePopupAlarma;
+        popOK.onclick = app.ponAlarma;
+        cerrar.ontouchstart = app.cerrar;
+        btnAbout.onclick = app.about;
         console.log("bindEvents:");
     },
     // deviceready Event Handler
@@ -198,6 +200,10 @@ var app = {
         console.log("Envia dato hora: "+app.hora+":"+app.minu);
 
     },
+    enviaAlarma: function() {
+        bluetoothSerial.write("A"+app.hora_alarma +":"+ app.minuto_alarma);
+        console.log("Envia dato hora alarma: "+app.hora_alarma+":"+app.minuto_alarma); 
+    },
     reloj: function () {
         var hora = new Date();
         app.hora = hora.getHours();
@@ -222,6 +228,28 @@ var app = {
     cerrar: function () {
         console.log("Cerrar");
         navigator.app.exitApp();
+    }
+    ,
+    abrePopupAlarma:function (){
+         $('#popupAlarma').popup('open');
+    }
+    
+    ,
+    ponAlarma: function () {
+      var aux="";
+      
+       aux=$("#set_alarma").val();
+       app.hora_alarma=aux.substring(0,2);
+       app.minuto_alarma=aux.substring(3,5);
+       //app.enviaAlarma();
+       $('#popupTelef').popup('close');
+       
+       console.log("ponAlarma: "+hora_alarma);
+    }
+    ,
+    about: function() {
+       $('#popupAbout').show(); 
+        console.log("about");
     }
 
 
