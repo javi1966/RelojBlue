@@ -83,34 +83,34 @@
                 <button id="setHora" class="ui-btn ui-corner-all">Set</button>
                 <button id="setAlarma"  data-rel="popup"  class="ui-btn ui-corner-all" >Set Alarma</button> 
                 <p id="conectado">Conectado a ...</p>
+                <p id="p_hora_alarma">Alarma a: </p> 
                 <!--</div>  -->
 
                 <div data-role="popup" id="popupAlarma"   
                      data-transition="turn" class="ui-corner-all ">
 
-                    <div data-role="header"  style="margin-left:1%;margin-right:1%;margin-top:1%;"  class="ui-corner-all">
-                        <h1 style="text-align:center;color:blue;font-size: 20px;opacity:0.83;"
-                            >Set Alarma</h1>
+                    <div data-role="header"   class="ui-corner-all">
+                        <h1>Set Alarma</h1>
                     </div>
-                    
-                    <div  data-role="content" style="padding:10px 20px;">
-                    <input id="set_alarma" type="time" style="font-family:font7segmentos;color:darkturquoise;
-                           ;padding-left:10%;padding-right:10%;">
-                    <a href="" id="popOK" style="margin:10% 20% 10% 20%;" data-role="button">OK</a>
-                    <a href="" style="margin:5% 15% 5% 15%;" data-role="button" data-rel="back">Cancelar</a>
-                    </div>
-                    
+
+
+                    <input id="set_alarma" type="time" >
+
+                    <a href="" id="popOK"  data-role="button">OK</a>
+                    <a href=""  data-role="button" data-rel="back">Cancelar</a>
+
+
                 </div>
 
 
-                <div data-role="popup" id="popupAbout"  data-overlay-theme="a" data-transition="flip"  class="ui-corner-all">
-                    <div data-role="header"  style="margin-left:1%;margin-right:1%;margin-top:1%;"  class="ui-corner-all">
-                        <h1 style="text-align:center;color:blueviolet;"
+                <div data-role="popup" id="popupAbout" style="background-color: black;" data-transition="flip"  class="ui-corner-all">
+                    <div data-role="header"  style="margin-left:1%;margin-right:1%;margin-top:1%;background-color: black;"  class="ui-corner-all">
+                        <h1 style="text-align:center;color:white;"
                             >About</h1>
                     </div>
-                    <p style="text-align:center;">Reloj Blue</p>
+                    <p style="text-align:center;color:blue;">Reloj Blue</p>
 
-                    <a href="#" style="background:rgba(152,255,0,0.6);" data-role="button" data-rel="back" >Cerrar</a>
+                    <a href="#" style="background-color:orange;margin:5% 15% 5% 15%;color:white;" data-role="button" data-rel="back" >Cerrar</a>
 
                 </div>
 

@@ -47,7 +47,7 @@ var app = {
     hora: "",
     minu: "",
     hora_alarma: "",
-    minuto_alarma:"",
+    minuto_alarma: "",
     // Application Constructor
     initialize: function () {
         this.bindEvents();
@@ -65,10 +65,10 @@ var app = {
         descButton.ontouchstart = app.disconnect;
         deviceList.ontouchstart = app.connect;
         setHora.ontouchstart = app.ponHora;
-        setAlarma.onclick=app.abrePopupAlarma;
-        popOK.onclick = app.ponAlarma;
+        setAlarma.onclick = app.abrePopupAlarma;
+        popOK.ontouchstart = app.ponAlarma;
         cerrar.ontouchstart = app.cerrar;
-        btnAbout.onclick = app.about;
+        btnAbout.ontouchstart = app.about;
         console.log("bindEvents:");
     },
     // deviceready Event Handler
@@ -87,7 +87,8 @@ var app = {
     onPageShow: function () {
 
         $("#divDesc").hide();
-        $("#conectado").hide();  
+        $("#conectado").hide();
+        $("#p_hora_alarma").hide();
     },
     //***********parte bluetooth **********************
     list: function (event) {
@@ -169,8 +170,8 @@ var app = {
         $("#divConectar").show('slow');
         $("#deviceList").hide('slow');
         toast("Desconectado...");
-        app.deviceName="";
-        $("#conectado").hide();  
+        app.deviceName = "";
+        $("#conectado").hide();
         console.log("Desconectando");
 
     },
@@ -189,20 +190,20 @@ var app = {
         $("#deviceList").hide('slow');
 
         toast("Conectado a..." + app.deviceName);
-        
-        $("#conectado").show().html("Conectado a "+app.deviceName)  
+
+        $("#conectado").show().html("Conectado a " + app.deviceName)
                 .css("color:green;");
-        console.log("Conectado a..."+app.deviceName);//+ this.deviceName);
+        console.log("Conectado a..." + app.deviceName);//+ this.deviceName);
     },
     enviaHora: function () {
 
-        bluetoothSerial.write(app.hora +":"+ app.minu);
-        console.log("Envia dato hora: "+app.hora+":"+app.minu);
+        bluetoothSerial.write(app.hora + ":" + app.minu);
+        console.log("Envia dato hora: " + app.hora + ":" + app.minu);
 
     },
-    enviaAlarma: function() {
-        bluetoothSerial.write("A"+app.hora_alarma +":"+ app.minuto_alarma);
-        console.log("Envia dato hora alarma: "+app.hora_alarma+":"+app.minuto_alarma); 
+    enviaAlarma: function () {
+        bluetoothSerial.write("A" + app.hora_alarma + ":" + app.minuto_alarma);
+        console.log("Envia dato hora alarma: " + app.hora_alarma + ":" + app.minuto_alarma);
     },
     reloj: function () {
         var hora = new Date();
@@ -230,25 +231,37 @@ var app = {
         navigator.app.exitApp();
     }
     ,
-    abrePopupAlarma:function (){
-         $('#popupAlarma').popup('open');
+    abrePopupAlarma: function () {
+
+        if (app.deviceName === "")
+            toast("No seleccionado ningun reloj");
+        else
+        {
+            $('#popupAlarma').popup('open');
+        }
     }
-    
+
     ,
     ponAlarma: function () {
-      var aux="";
-      
-       aux=$("#set_alarma").val();
-       app.hora_alarma=aux.substring(0,2);
-       app.minuto_alarma=aux.substring(3,5);
-       //app.enviaAlarma();
-       $('#popupTelef').popup('close');
-       
-       console.log("ponAlarma: "+hora_alarma);
+        var aux = "";
+
+        aux = $("#set_alarma").val();
+        app.hora_alarma = aux.substring(0, 2);
+        app.minuto_alarma = aux.substring(3, 5);
+        if (app.hora_alarma === "" && app.minuto_alarma === "")
+        {
+            toast("Introduce Hora Alarma");
+
+        }
+        //app.enviaAlarma();
+        
+        $('#popupAlarma').popup('close');
+        $("#p_hora_alarma").html(app.hora_alarma + ":" + app.minuto_alarma);
+        console.log("ponAlarma: " + app.hora_alarma + ":" + app.minuto_alarma);
     }
     ,
-    about: function() {
-       $('#popupAbout').show(); 
+    about: function () {
+        $('#popupAbout').show();
         console.log("about");
     }
 

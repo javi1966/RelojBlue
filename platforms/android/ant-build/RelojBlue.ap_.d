@@ -29,6 +29,7 @@ D:\DESARROLLOS\SK_RELOJ_BLU\RelojBlue\platforms\android\assets\www\img\fondo_azu
 D:\DESARROLLOS\SK_RELOJ_BLU\RelojBlue\platforms\android\assets\www\img\fondo_negro.jpg \
 D:\DESARROLLOS\SK_RELOJ_BLU\RelojBlue\platforms\android\assets\www\img\logo.png \
 D:\DESARROLLOS\SK_RELOJ_BLU\RelojBlue\platforms\android\assets\www\js\index.js \
+D:\DESARROLLOS\SK_RELOJ_BLU\RelojBlue\platforms\android\assets\www\js\jquery-2.1.4.min.js \
 D:\DESARROLLOS\SK_RELOJ_BLU\RelojBlue\platforms\android\assets\www\js\jquery-2.2.3.min.js \
 D:\DESARROLLOS\SK_RELOJ_BLU\RelojBlue\platforms\android\assets\www\js\jquery.mobile-1.4.5.min.js \
 D:\DESARROLLOS\SK_RELOJ_BLU\RelojBlue\platforms\android\assets\www\plugins\cordova-plugin-bluetooth-serial \
