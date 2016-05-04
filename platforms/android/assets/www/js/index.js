@@ -191,8 +191,8 @@ var app = {
 
         toast("Conectado a..." + app.deviceName);
 
-        $("#conectado").show().html("Conectado a " + app.deviceName)
-                .css("color:green;");
+        $("#conectado").show().html("Conectado a " + (app.deviceName ==="00:15:FF:F2:10:D3"?"Reloj_1":"Desconocido"));
+
         console.log("Conectado a..." + app.deviceName);//+ this.deviceName);
     },
     enviaHora: function () {
@@ -238,6 +238,7 @@ var app = {
         else
         {
             $('#popupAlarma').popup('open');
+            $("#p_hora_alarma").hide();
         }
     }
 
@@ -252,12 +253,14 @@ var app = {
         {
             toast("Introduce Hora Alarma");
 
+        } else {
+            app.enviaAlarma();
+
+            $('#popupAlarma').popup('close');
+            $("#p_hora_alarma").show().html("Alarma Puesta: " + app.hora_alarma + ":" + app.minuto_alarma);
+
+            console.log("ponAlarma: " + app.hora_alarma + ":" + app.minuto_alarma);
         }
-        //app.enviaAlarma();
-        
-        $('#popupAlarma').popup('close');
-        $("#p_hora_alarma").html(app.hora_alarma + ":" + app.minuto_alarma);
-        console.log("ponAlarma: " + app.hora_alarma + ":" + app.minuto_alarma);
     }
     ,
     about: function () {
