@@ -68,7 +68,7 @@ var app = {
         setAlarma.onclick = app.abrePopupAlarma;
         popOK.ontouchstart = app.ponAlarma;
         cerrar.ontouchstart = app.cerrar;
-        btnAbout.ontouchstart = app.about;
+        btnAbout.onclick = app.about;
         console.log("bindEvents:");
     },
     // deviceready Event Handler
