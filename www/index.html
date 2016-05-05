@@ -82,7 +82,7 @@
                 <p class="p_alto">Control Hora</p>
                 <div id="idHora">88:88</div>
 
-                <button id="setHora" class="ui-btn ui-corner-all">Set</button>
+                <button id="setHora" class="ui-btn ui-corner-all">Set Hora</button>
                 <button id="setAlarma"  data-rel="popup"  class="ui-btn ui-corner-all" >Set Alarma</button>
                 
                 <p id="conectado" class="p_bajo">Conectado a ...</p>
@@ -90,7 +90,7 @@
                 <!--</div>  -->
 
                 <div data-role="popup" id="popupAlarma"   
-                     data-transition="turn" class="ui-corner-all ">
+                     data-transition="flip" class="ui-corner-all ">
 
                     <div data-role="header"   class="ui-corner-all">
                         <h1>Set Alarma</h1>
@@ -99,8 +99,8 @@
 
                     <input id="set_alarma" type="time" >
 
-                    <a href="" id="popOK"  data-role="button">OK</a>
-                    <a href=""  data-role="button" data-rel="back">Cancelar</a>
+                    <a href="" id="popOK"  data-role="button" >OK</a>
+                    <a href=""  data-role="button" data-rel="back" >Cancelar</a>
 
 
                 </div>
@@ -111,8 +111,8 @@
                         <h1 style="text-align:center;color:white;"
                             >About</h1>
                     </div>
-                    <p style="text-align:center;color:blue;">Reloj Blue</p>
-
+                    <p style="text-align:center;color:graytext;font-size: 1.5em;">Reloj Blue</p>
+                    <p style="text-align:center;color:graytext;font-size: 1.3em;">&copy;Javier Espinosa Guerra</p>
                     <a href="#" style="background-color:orange;margin:5% 15% 5% 15%;color:white;" data-role="button" data-rel="back" >Cerrar</a>
 
                 </div>
@@ -132,8 +132,8 @@
         </div>  <!-- Pagina Principal -->
 
 
-        <div id="warning-message" style="color:red;" >
-            <h2 >Esta APP solo se ve en PORTRAIT</h2>
+        <div id="warning-message" >
+            <h2 style="text-align:center;color:red;">Esta APP solo se ve en PORTRAIT</h2>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
