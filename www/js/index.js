@@ -77,11 +77,13 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function () {
         app.receivedEvent('deviceready');
+        $(document).bind("resume",app.onResumedApp);
         console.log("onDeviceReady");
     },
     // Update DOM on a Received Event
     receivedEvent: function (id) {
         toast("Iniciando...");
+        
         console.log('Received Event: ' + id);
     },
     onPageShow: function () {
@@ -266,6 +268,11 @@ var app = {
     about: function () {
         $('#popupAbout').show();
         console.log("about");
+    }
+    ,
+    onResumedApp:function () {
+        toast("Salida De Pausa de APP");
+        
     }
 
 
