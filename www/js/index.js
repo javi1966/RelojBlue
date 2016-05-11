@@ -77,13 +77,13 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function () {
         app.receivedEvent('deviceready');
-        $(document).bind("resume",app.onResumedApp);
+        $(document).bind("resume", app.onResumedApp);
         console.log("onDeviceReady");
     },
     // Update DOM on a Received Event
     receivedEvent: function (id) {
         toast("Iniciando...");
-        
+
         console.log('Received Event: ' + id);
     },
     onPageShow: function () {
@@ -193,7 +193,7 @@ var app = {
 
         toast("Conectado a..." + app.deviceName);
 
-        $("#conectado").show().html("Conectado a " + (app.deviceName ==="00:15:FF:F2:10:D3"?"RELOJ_1":"Desconocido"));
+        $("#conectado").show().html("Conectado a " + (app.deviceName === "00:15:FF:F2:10:D3" ? "RELOJ_1" : "Desconocido"));
 
         console.log("Conectado a..." + app.deviceName);//+ this.deviceName);
     },
@@ -229,8 +229,25 @@ var app = {
     }
     ,
     cerrar: function () {
+
+        // navigator.app.exitApp();
+        navigator.notification.confirm(
+                'Quieres salir de la APP?',
+                app.onConfirmExit,
+                'Confirma Salida',
+                ['OK', 'Cancel']
+                );
         console.log("Cerrar");
-        navigator.app.exitApp();
+    },
+    onConfirmExit: function (buttonIndex) {
+        if (buttonIndex === 1) {
+
+            navigator.app.exitApp();
+            console.log("onConfirmExit");
+        }
+
+
+
     }
     ,
     abrePopupAlarma: function () {
@@ -270,9 +287,9 @@ var app = {
         console.log("about");
     }
     ,
-    onResumedApp:function () {
+    onResumedApp: function () {
         toast("Salida De Pausa de APP");
-        
+
     }
 
 
