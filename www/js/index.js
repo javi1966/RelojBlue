@@ -46,6 +46,7 @@ var app = {
     deviceName: "",
     hora: "",
     minu: "",
+    seg: "",
     hora_alarma: "",
     minuto_alarma: "",
     // Application Constructor
@@ -199,8 +200,8 @@ var app = {
     },
     enviaHora: function () {
 
-        bluetoothSerial.write(app.hora + ":" + app.minu);
-        console.log("Envia dato hora: " + app.hora + ":" + app.minu);
+        bluetoothSerial.write(app.hora + ":" + app.minu+ ":" +app.seg);
+        console.log("Envia dato hora: " + app.hora + ":" + app.minu+":"+app.seg);
 
     },
     enviaAlarma: function () {
@@ -209,8 +210,11 @@ var app = {
     },
     reloj: function () {
         var hora = new Date();
+        
         app.hora = hora.getHours();
         app.minu = hora.getMinutes();
+        app.seg  = hora.getSeconds();
+        
         app.minu = app.minu > 9 ? app.minu : '0' + app.minu;
         var strHora = hora.getHours() + '.' + app.minu;
         // console.log("reloj: "+strHora);
@@ -245,8 +249,6 @@ var app = {
             navigator.app.exitApp();
             console.log("onConfirmExit");
         }
-
-
 
     }
     ,
