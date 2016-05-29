@@ -67,6 +67,7 @@ var app = {
         deviceList.ontouchstart = app.connect;
         setHora.ontouchstart = app.ponHora;
         setAlarma.onclick = app.abrePopupAlarma;
+        borraAlarma.ontouchstart =app.borraAlarma;
         popOK.ontouchstart = app.ponAlarma;
         cerrar.ontouchstart = app.cerrar;
         btnAbout.onclick = app.about;
@@ -207,7 +208,15 @@ var app = {
     enviaAlarma: function () {
         bluetoothSerial.write("A" + app.hora_alarma + ":" + app.minuto_alarma);
         console.log("Envia dato hora alarma: " + app.hora_alarma + ":" + app.minuto_alarma);
-    },
+    }
+    ,
+    
+     enviaBorradoAlarma:function () {
+         
+        bluetoothSerial.write("B"); 
+        console.log("Envia borrado alarma");
+     }
+    ,
     reloj: function () {
         var hora = new Date();
         
@@ -282,6 +291,13 @@ var app = {
 
             console.log("ponAlarma: " + app.hora_alarma + ":" + app.minuto_alarma);
         }
+    }
+    ,
+    borraAlarma: function () {
+        app.enviaBorradoAlarma();
+        $("#p_hora_alarma").hide();
+        toast("Alarma Borrada");
+        console.log("Borra Alarma");
     }
     ,
     about: function () {
