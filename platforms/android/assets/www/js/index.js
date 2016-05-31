@@ -31,7 +31,6 @@ var toast = function (msg) {
                 "-ms-box-shadow": "10px 10px 5px 0px rgba(102,102,102,0.65)",
                 "box-shadow": "10px 10px 5px 0px rgba(102,102,102,0.65)",
             })
-
             .appendTo("body").delay(3000)
             .fadeOut(400, function () {
                 $(this).remove();
@@ -195,7 +194,9 @@ var app = {
 
         toast("Conectado a..." + app.deviceName);
 
-        $("#conectado").show().html("Conectado a " + (app.deviceName === "00:15:FF:F2:10:D3" ? "RELOJ_1" : "Desconocido"));
+        $("#conectado").show()
+           .html("Conectado a " + (app.deviceName === "00:15:FF:F2:10:D3" ? "RELOJ_1" : "Desconocido"));
+           
 
         console.log("Conectado a..." + app.deviceName);//+ this.deviceName);
     },
@@ -287,8 +288,9 @@ var app = {
             app.enviaAlarma();
 
             $('#popupAlarma').popup('close');
-            $("#p_hora_alarma").show().html("Alarma Puesta: " + app.hora_alarma + ":" + app.minuto_alarma);
-
+            $("#p_hora_alarma").show()
+                    .html("Alarma Puesta: " + app.hora_alarma + ":" + app.minuto_alarma);
+                    
             console.log("ponAlarma: " + app.hora_alarma + ":" + app.minuto_alarma);
         }
     }
