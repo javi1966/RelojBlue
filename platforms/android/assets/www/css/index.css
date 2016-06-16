@@ -108,11 +108,12 @@ button {
     /*background: linear-gradient(blue,lightblue);
     background: -webkit-linear-gradient(blue,lightblue);*/
     background: blue !important;
-    color: white !important;
+    color:burlywood !important;
     letter-spacing: 3px !important; 
+    
     box-shadow: inset 0px 0px 18px 3px lightblue;
     -webkit-text-shadow: 0px 0px 15px blue !important;
-    text-shadow:0px 0px 20px white !important;
+    text-shadow:0px 0px 5px lightblue !important;
 }
 
 .ui-footer-fixed a{
