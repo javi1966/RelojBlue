@@ -289,7 +289,7 @@ var app = {
 
             $('#popupAlarma').popup('close');
             $("#p_hora_alarma").show()
-                    .html("Alarma Puesta: " + app.hora_alarma + ":" + app.minuto_alarma);
+                    .html("Alarma Set: " + app.hora_alarma + ":" + app.minuto_alarma);
                     
             console.log("ponAlarma: " + app.hora_alarma + ":" + app.minuto_alarma);
         }

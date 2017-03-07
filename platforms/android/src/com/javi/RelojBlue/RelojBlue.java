@@ -17,7 +17,7 @@
        under the License.
  */
 
-package com.coolappz.RelojBlue;
+package com.javi.RelojBlue;
 
 import android.os.Bundle;
 import org.apache.cordova.*;

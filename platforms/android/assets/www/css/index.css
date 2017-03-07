@@ -29,8 +29,8 @@
 .ui-header-fixed {
 
     color:navy !important;
-    font-family: cursive !important;
-    font-size: 1.2em;
+    font-family: "Times New Roman", Times, serif !important;
+    font-size: 1em;
     font-weight:bold;
     letter-spacing: 3px !important; 
     /*background-color: #5f9cc5 !important;*/
@@ -40,7 +40,8 @@
     text-shadow:0px 0px 18px yellow !important;
 }
 .ui-header-fixed a{
-    background:linear-gradient(blue,lightblue); 
+    background:linear-gradient(blue,lightblue);
+   
     padding-right: 8px;
     padding-top: 40px;
     border:0 !important;
@@ -70,7 +71,7 @@
     color:cyan;
     text-align: center;
     font-family:font7segmentos;
-    font-size: 5.5em;
+    font-size: 5.0em;
     text-shadow: 0px 0px 20px  white !important;
 
 }
@@ -92,7 +93,7 @@ button {
     margin: 0 ;
     border-bottom: 3px dotted white;
     color:burlywood;
-    font-family: cursive;
+    font-family: "Times New Roman", Times, serif;
     font-weight:bold;
     letter-spacing: 3px; 
     text-align: left;
@@ -108,12 +109,12 @@ button {
     /*background: linear-gradient(blue,lightblue);
     background: -webkit-linear-gradient(blue,lightblue);*/
     background: blue !important;
-    color:burlywood !important;
-    letter-spacing: 3px !important; 
+    color: white !important;
+    letter-spacing: 2px !important; 
     
     box-shadow: inset 0px 0px 18px 3px lightblue;
     -webkit-text-shadow: 0px 0px 15px blue !important;
-    text-shadow:0px 0px 5px lightblue !important;
+    text-shadow:0px 0px 8px white !important;
 }
 
 .ui-footer-fixed a{
@@ -201,14 +202,15 @@ button {
 
 .p_bajo{
     color:burlywood;
-    font-family: cursive;
+    font-family: "Times New Roman", Times, serif;
     text-align: justify;
-    font-size: 1em;
-    font-weight:bold;
+    font-size: 0.7em;
+          
+     /*font-weight:bold;*/
     border-left-color: red ;
     border-left-width: medium;
     text-shadow: 0px 0px 15px white;
-
+    display:inline;
 }
 
 #warning-message { display: none; }
