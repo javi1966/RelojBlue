@@ -78,7 +78,7 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function () {
         app.receivedEvent('deviceready');
-        $(document).bind("resume", app.onResumedApp);
+        //$(document).bind("resume", app.onResumedApp);
         console.log("onDeviceReady");
     },
     // Update DOM on a Received Event
